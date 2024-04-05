@@ -2,3 +2,4 @@
 .vscode
 __pycache__
 todo_env
+venv
