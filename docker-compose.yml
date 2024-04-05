@@ -1,10 +1,12 @@
 services:
   db:
       image: postgres:16.2-alpine3.18
+      container_name: todo_db
       restart: always
       environment:
-        POSTGRES_PASSWORD: todo123
-        POSTGRES_USER: todouser
+        POSTGRES_PASSWORD: ${DB_PASS}
+        POSTGRES_USER: ${DB_USER}
+        POSTGRES_DB: ${DB_NAME}
       healthcheck:
         test: ["CMD-SHELL", "pg_isready"]
         interval: 60s
